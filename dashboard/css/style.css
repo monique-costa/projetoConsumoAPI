@@ -135,9 +135,12 @@ footer {
 
 #movies img , #movie img{
     width: auto;
-	text-align: center;
+	
 }
 
+#movie, #movies {
+	padding: o auto;
+}
 
 @media(min-width:960px){
     #movies .col-md-2 .well{
