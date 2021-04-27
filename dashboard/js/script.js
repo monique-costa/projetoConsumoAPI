@@ -183,6 +183,7 @@ function geraCharts() {
 	var canvasdisplay1 = document.getElementById("div-canvas1").style.display
 	var canvasdisplay2 = document.getElementById("div-canvas2").style.display
 	var canvasdisplay3 = document.getElementById("div-canvas3").style.display
+	var canvasdisplay4 = document.getElementById("div-canvas4").style.display
 	if(canvasdisplay1 == "none") {
 		document.getElementById("div-canvas1").style.display = ''
 	}
@@ -192,14 +193,17 @@ function geraCharts() {
 	if(canvasdisplay3 == "none") {
 		document.getElementById("div-canvas3").style.display = ''
 	}
+	if(canvasdisplay4 == "none") {
+		document.getElementById("div-canvas4").style.display = ''
+	}
 	filmesIdJSON.length == 5 ? geraCharts5Filmes() : geraCharts10Filmes()	
 }
 
 function geraCharts5Filmes() {
 	/* Insere os posters e graficos na tela*/
 	$('#movies').html(output);
-	geradorChartjs5Box()
 	geradorChartjs5Rating()
+	geradorChartjs5Box()
 	geradorChartjs5Year()
 	geradorChartjs5Runtime()
 	document.getElementById("btn-enviar-titulo").style.display = 'none'
@@ -211,8 +215,8 @@ function geraCharts5Filmes() {
 function geraCharts10Filmes() {
 	/* Insere os posters e graficos na tela*/
 	$('#movies').html(output);
-	geradorChartjs10Box()
 	geradorChartjs10Rating()
+	geradorChartjs10Box()
 	geradorChartjs10Year()
 	geradorChartjs10Runtime()
 	document.getElementById("btn-enviar-titulo").style.display = 'none'
@@ -328,7 +332,7 @@ function geradorChartjs10Rating() {
 
 function geradorChartjs10Year() {
 	/*Gera grafico de linhas*/
-	var ctx = document.getElementById('myChartRating').getContext('2d');
+	var ctx = document.getElementById('myChartYear').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'line',
 	data: {
@@ -337,10 +341,10 @@ function geradorChartjs10Year() {
 			label: 'ANO DE LANÇAMENTO',
 			data: arrayYear,
 			backgroundColor: [
-				'rgba(116, 116, 242, 1)'
+				'rgba(242, 211, 104, 1)',
 				],
 			borderColor: [
-				'rgba(116, 116, 242, 1)'
+				'rgba(242, 211, 104, 1)',
 			],
 			borderWidth: 3,
 
@@ -512,7 +516,7 @@ function geradorChartjs5Rating() {
 
 function geradorChartjs5Year() {
 	/*Gera grafico de linhas*/
-	var ctx = document.getElementById('myChartRating').getContext('2d');
+	var ctx = document.getElementById('myChartYear').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'line',
 	data: {
@@ -521,10 +525,10 @@ function geradorChartjs5Year() {
 			label: 'ANO DE LANÇAMENTO',
 			data: arrayYear,
 			backgroundColor: [
-				'rgba(116, 116, 242, 1)'
+				'rgba(242, 211, 104, 1)',
 				],
 			borderColor: [
-				'rgba(116, 116, 242, 1)'
+				'rgba(242, 211, 104, 1)',
 			],
 			borderWidth: 3,
 
