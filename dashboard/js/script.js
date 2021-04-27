@@ -430,7 +430,8 @@ function geradorChartjs10Runtime() {
 
 function geradorChartjs5Box() {
 	/*Gera grafico de barras*/
-	var ctx = document.getElementById('myChartVotos').getContext('2d');
+	
+	var ctx = document.getElementById('myChartBox').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'bar',
 	data: {
@@ -443,13 +444,15 @@ function geradorChartjs5Box() {
 				'rgba(130, 245, 134, 1)',
 				'rgba(204, 219, 105, 1)',
 				'rgba(242, 211, 104, 1)',
-				'rgba(235, 168, 108, 1)'],
+				'rgba(235, 168, 108, 1)',
+				
 			borderColor: [
 				'rgba(136, 238, 216, 1)',
 				'rgba(130, 245, 134, 1)',
 				'rgba(204, 219, 105, 1)',
 				'rgba(242, 211, 104, 1)',
-				'rgba(235, 168, 108, 1)'],
+				'rgba(235, 168, 108, 1)',
+				
 			borderWidth: 3
 		}]
 	},
@@ -457,7 +460,7 @@ function geradorChartjs5Box() {
 		plugins: {
             title: {
                 display: true,
-                text: 'BILHETERIA', 				
+                text: 'BILHETERIA',
 				font: {
 					weight: 'bold',
 					size: 26
@@ -475,14 +478,14 @@ function geradorChartjs5Box() {
 }
 
 function geradorChartjs5Rating() {
-	/*Gera grafico de linha*/
+	/*Gera grafico de linhas*/
 	var ctx = document.getElementById('myChartRating').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'line',
 	data: {
 		labels: arrayTitle,
-		datasets: [{
-			label: 'AVALIAÇÃO',
+		datasets: [{			
+			label: 'NOTA',
 			data: arrayImdbRating,
 			backgroundColor: [
 				'rgba(116, 116, 242, 1)'
@@ -490,10 +493,16 @@ function geradorChartjs5Rating() {
 			borderColor: [
 				'rgba(116, 116, 242, 1)'
 			],
-			borderWidth: 3
+			borderWidth: 3,
+
 		}]
 	},
 	options: {
+		scales: {
+			y: {
+				beginAtZero: true
+			}
+		},
 		plugins: {
             title: {
                 display: true,
@@ -503,12 +512,7 @@ function geradorChartjs5Rating() {
 					size: 26
 				}
 			}
-		},
-		scales: {
-			y: {
-				beginAtZero: true
-			}
-		}
+		}				
 	}
 	
 	});
@@ -556,37 +560,29 @@ function geradorChartjs5Year() {
 }
 
 function geradorChartjs5Runtime() {
-	/*Gera grafico de radar*/
+	/*Gera grafico de Radar*/
 	var ctx = document.getElementById('myChartRuntime').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'polarArea',
 	data: {
-		labels: [
-			`${arrayTitle[0]}`,
-			`${arrayTitle[1]}`,
-			`${arrayTitle[2]}`,
-			`${arrayTitle[3]}`, 
-			`${arrayTitle[4]}`],
+		labels: arrayTitle,
 		datasets: [{
 			label: 'MINUTOS',
-			data: [
-				`${arrayRuntime[0]}`,
-				`${arrayRuntime[1]}`,
-				`${arrayRuntime[2]}`,
-				`${arrayRuntime[3]}`,
-				`${arrayRuntime[4]}`],
+			data: arrayRuntime,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
 				'rgba(130, 245, 134, 1)',
 				'rgba(204, 219, 105, 1)',
 				'rgba(242, 211, 104, 1)',
-				'rgba(235, 168, 108, 1)'],
+				'rgba(235, 168, 108, 1)',
+				
 			borderColor: [
 				'rgba(136, 238, 216, 1)',
 				'rgba(130, 245, 134, 1)',
 				'rgba(204, 219, 105, 1)',
 				'rgba(242, 211, 104, 1)',
-				'rgba(235, 168, 108, 1)'],
+				'rgba(235, 168, 108, 1)',
+				
 			borderWidth: 3
 		}]
 	},
@@ -600,7 +596,7 @@ function geradorChartjs5Runtime() {
 					size: 26
 				}
 			}
-		},
+		},		
 		scales: {			
 			y: {
 				beginAtZero: true
@@ -611,6 +607,7 @@ function geradorChartjs5Runtime() {
 	
 	});
 }
+
 
 // -------------------------------------------------------------
 // --------- FIM DAS FUNÇÕES GERADORAS DOS GRÁFICOS ------------
