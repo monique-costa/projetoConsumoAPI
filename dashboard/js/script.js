@@ -241,7 +241,7 @@ function geradorChartjs10Box() {
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'BILHETERIA',
+			label: 'DÓLARES',
 			data: arrayBoxOffice,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
@@ -272,7 +272,7 @@ function geradorChartjs10Box() {
 		plugins: {
             title: {
                 display: true,
-                text: 'BILHETERIA (EM DÓLARES)',
+                text: 'BILHETERIA',
 				font: {
 					weight: 'bold',
 					size: 26
@@ -353,7 +353,7 @@ function geradorChartjs10Year() {
 	options: {
 		scales: {
 			y: {
-				beginAtZero: true
+				beginAtZero: false
 			}
 		},
 		plugins: {
@@ -379,7 +379,7 @@ function geradorChartjs10Runtime() {
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'TEMPO DE DURAÇÃO',
+			label: 'MINUTOS',
 			data: arrayRuntime,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
@@ -410,7 +410,7 @@ function geradorChartjs10Runtime() {
 		plugins: {
             title: {
                 display: true,
-                text: 'DURAÇÃO DO FILME EM MINUTOS', 				
+                text: 'DURAÇÃO DO FILME', 				
 				font: {
 					weight: 'bold',
 					size: 26
@@ -436,7 +436,7 @@ function geradorChartjs5Box() {
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'BILHETERIA',
+			label: 'DÓLARES',
 			data: arrayBoxOffice,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
@@ -457,7 +457,7 @@ function geradorChartjs5Box() {
 		plugins: {
             title: {
                 display: true,
-                text: 'BILHETERIA (EM DÓLARES)', 				
+                text: 'BILHETERIA', 				
 				font: {
 					weight: 'bold',
 					size: 26
@@ -537,7 +537,7 @@ function geradorChartjs5Year() {
 	options: {
 		scales: {
 			y: {
-				beginAtZero: true
+				beginAtZero: false
 			}
 		},
 		plugins: {
@@ -568,7 +568,7 @@ function geradorChartjs5Runtime() {
 			`${arrayTitle[3]}`, 
 			`${arrayTitle[4]}`],
 		datasets: [{
-			label: 'TEMPO DE DURAÇÂO',
+			label: 'MINUTOS',
 			data: [
 				`${arrayRuntime[0]}`,
 				`${arrayRuntime[1]}`,
@@ -594,7 +594,7 @@ function geradorChartjs5Runtime() {
 		plugins: {
             title: {
                 display: true,
-                text: 'DURAÇÃO DO FILME EM MINUTOS', 				
+                text: 'DURAÇÃO DO FILME', 				
 				font: {
 					weight: 'bold',
 					size: 26
