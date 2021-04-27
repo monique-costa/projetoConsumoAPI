@@ -135,6 +135,7 @@ footer {
 
 #movies img , #movie img{
     width: auto;
+	text-align: center;
 }
 
 
