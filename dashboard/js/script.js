@@ -198,8 +198,9 @@ function geraCharts() {
 function geraCharts5Filmes() {
 	/* Insere os posters e graficos na tela*/
 	$('#movies').html(output);
-	geradorChartjs5Votos()
+	geradorChartjs5Box()
 	geradorChartjs5Rating()
+	geradorChartjs5Year()
 	geradorChartjs5Runtime()
 	document.getElementById("btn-enviar-titulo").style.display = 'none'
 	document.getElementById("btn-enviar-termo").style.display = 'none'
@@ -210,8 +211,9 @@ function geraCharts5Filmes() {
 function geraCharts10Filmes() {
 	/* Insere os posters e graficos na tela*/
 	$('#movies').html(output);
-	geradorChartjs10Votos()
+	geradorChartjs10Box()
 	geradorChartjs10Rating()
+	geradorChartjs10Year()
 	geradorChartjs10Runtime()
 	document.getElementById("btn-enviar-titulo").style.display = 'none'
 	document.getElementById("btn-enviar-termo").style.display = 'none'
@@ -226,17 +228,17 @@ function btnNovaBusca() {
     elemento.innerHTML = botao;
 }
 
-function geradorChartjs10Votos() {
+function geradorChartjs10Box() {
 	/*Gera grafico de barras*/
 	
-	var ctx = document.getElementById('myChartVotos').getContext('2d');
+	var ctx = document.getElementById('myChartBox').getContext('2d');
 	var myChart = new Chart(ctx, {
 	type: 'bar',
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'NÚMEROS DE VOTOS',
-			data: arrayImdbVotes,
+			label: 'BILHETERIA',
+			data: arrayBoxOffice,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
 				'rgba(130, 245, 134, 1)',
@@ -266,7 +268,7 @@ function geradorChartjs10Votos() {
 		plugins: {
             title: {
                 display: true,
-                text: 'QUANTIDADE DE VOTOS',
+                text: 'BILHETERIA (EM DÓLARES)',
 				font: {
 					weight: 'bold',
 					size: 26
@@ -324,6 +326,47 @@ function geradorChartjs10Rating() {
 	});
 }
 
+function geradorChartjs10Year() {
+	/*Gera grafico de linhas*/
+	var ctx = document.getElementById('myChartRating').getContext('2d');
+	var myChart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: arrayTitle,
+		datasets: [{			
+			label: 'ANO DE LANÇAMENTO',
+			data: arrayYear,
+			backgroundColor: [
+				'rgba(116, 116, 242, 1)'
+				],
+			borderColor: [
+				'rgba(116, 116, 242, 1)'
+			],
+			borderWidth: 3,
+
+		}]
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true
+			}
+		},
+		plugins: {
+            title: {
+                display: true,
+                text: 'ANO DE LANÇAMENTO', 				
+				font: {
+					weight: 'bold',
+					size: 26
+				}
+			}
+		}				
+	}
+	
+	});
+}
+
 function geradorChartjs10Runtime() {
 	/*Gera grafico de Radar*/
 	var ctx = document.getElementById('myChartRuntime').getContext('2d');
@@ -332,7 +375,7 @@ function geradorChartjs10Runtime() {
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'TEMPO DE DURAÇÂO',
+			label: 'TEMPO DE DURAÇÃO',
 			data: arrayRuntime,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
@@ -381,7 +424,7 @@ function geradorChartjs10Runtime() {
 	});
 }
 
-function geradorChartjs5Votos() {
+function geradorChartjs5Box() {
 	/*Gera grafico de barras*/
 	var ctx = document.getElementById('myChartVotos').getContext('2d');
 	var myChart = new Chart(ctx, {
@@ -389,8 +432,8 @@ function geradorChartjs5Votos() {
 	data: {
 		labels: arrayTitle,
 		datasets: [{
-			label: 'NÚMEROS DE VOTOS',
-			data: arrayImdbVotes,
+			label: 'BILHETERIA',
+			data: arrayBoxOffice,
 			backgroundColor: [
 				'rgba(136, 238, 216, 1)',
 				'rgba(130, 245, 134, 1)',
@@ -410,7 +453,7 @@ function geradorChartjs5Votos() {
 		plugins: {
             title: {
                 display: true,
-                text: 'QUANTIDADE DE VOTOS', 				
+                text: 'BILHETERIA (EM DÓLARES)', 				
 				font: {
 					weight: 'bold',
 					size: 26
@@ -467,6 +510,47 @@ function geradorChartjs5Rating() {
 	});
 }
 
+function geradorChartjs5Year() {
+	/*Gera grafico de linhas*/
+	var ctx = document.getElementById('myChartRating').getContext('2d');
+	var myChart = new Chart(ctx, {
+	type: 'line',
+	data: {
+		labels: arrayTitle,
+		datasets: [{			
+			label: 'ANO DE LANÇAMENTO',
+			data: arrayYear,
+			backgroundColor: [
+				'rgba(116, 116, 242, 1)'
+				],
+			borderColor: [
+				'rgba(116, 116, 242, 1)'
+			],
+			borderWidth: 3,
+
+		}]
+	},
+	options: {
+		scales: {
+			y: {
+				beginAtZero: true
+			}
+		},
+		plugins: {
+            title: {
+                display: true,
+                text: 'ANO DE LANÇAMENTO', 				
+				font: {
+					weight: 'bold',
+					size: 26
+				}
+			}
+		}				
+	}
+	
+	});
+}
+
 function geradorChartjs5Runtime() {
 	/*Gera grafico de radar*/
 	var ctx = document.getElementById('myChartRuntime').getContext('2d');
@@ -506,7 +590,7 @@ function geradorChartjs5Runtime() {
 		plugins: {
             title: {
                 display: true,
-                text: 'AVALIAÇÃO DO FILME NO IMDB', 				
+                text: 'DURAÇÃO DO FILME EM MINUTOS', 				
 				font: {
 					weight: 'bold',
 					size: 26
